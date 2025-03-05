@@ -179,13 +179,13 @@ a:hover {
 }
 
 .logo-container {
-    background-color: white;
     justify-content: space-around;
+    background-color: white;
     align-items: center;
     flex-wrap: wrap;
     display: flex;
     width: 100%;
-    height: 21%;
+    height: auto;
 }
 
 .logo-container img {
@@ -205,6 +205,7 @@ a:hover {
     flex-direction: row;
     align-items: center;
     user-select: none;
+    flex-wrap: wrap;
     display: flex;
     padding: 10px;
     height: 75%;
@@ -257,6 +258,13 @@ a:hover {
     }
 }
 
+@media screen and (max-width: 900px) {
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .welcome-container {
     background-image: url("images/pet.jpg");
     background-repeat: no-repeat;
@@ -275,9 +283,10 @@ a:hover {
 }
 
 .welcome-content-container {
-    align-items: flex-start;
     flex-direction: column;
+    align-items: center;
     position: absolute;
+    min-width: 400px;
     display: flex;
     bottom: 20%;
     width: 30%;
@@ -288,7 +297,7 @@ a:hover {
 .welcome-content-container span:nth-child(1) {
     font-family: inter-regular;
     color: #000000;
-    font-size: 50px;
+    font-size: clamp(30px, 3vw, 50px);
 }
 
 .welcome-content-container span:nth-child(2) {
@@ -297,18 +306,6 @@ a:hover {
     margin-bottom: 4px;
     line-height: 22px;
     font-size: 20px;
-}
-
-.welcome-content-container {
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    min-width: 400px;
-    display: flex;
-    bottom: 20%;
-    width: 30%;
-    left: 50px;
-    gap: 20px;
 }
 
 .section-content-container {
